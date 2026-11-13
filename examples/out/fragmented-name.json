@@ -1,0 +1,61 @@
+{
+  "tool": "fcc-stream-audit",
+  "version": "1.0.0",
+  "source": "examples/in/fragmented-name.sse",
+  "chunks": 6,
+  "saw_done": true,
+  "tool_calls": [
+    {
+      "index": 0,
+      "id": "call_1",
+      "complete_name": "Read",
+      "emit_early_name": "Re",
+      "replace_name": "ad",
+      "name_fragments": [
+        "Re",
+        "ad"
+      ],
+      "first_name_position": 3,
+      "arguments": "{\"file_path\":\"a\"}",
+      "arguments_valid": true
+    },
+    {
+      "index": 1,
+      "id": "call_2",
+      "complete_name": "Bash",
+      "emit_early_name": "Bash",
+      "replace_name": "Bash",
+      "name_fragments": [
+        "Bash"
+      ],
+      "first_name_position": 9,
+      "arguments": "{\"cmd\":\"ls\"}",
+      "arguments_valid": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "TOOL_NAME_TRUNCATED_EARLY",
+      "level": "error",
+      "tool_index": 0,
+      "position": 3,
+      "message": "tool 0 name is assembled from 2 fragments; opening the block on the first fragment yields 'Re' instead of 'Read'"
+    }
+  ],
+  "summary": {
+    "tool_calls": 2,
+    "errors": 1,
+    "warnings": 0
+  },
+  "witnesses": [
+    {
+      "tool_index": 0,
+      "positions": [
+        3,
+        5
+      ],
+      "chunks": 2,
+      "one_minimal_verified": true
+    }
+  ]
+}

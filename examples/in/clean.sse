@@ -1,0 +1,7 @@
+data: {"id":"c2","choices":[{"index":0,"delta":{"role":"assistant"}}]}
+
+data: {"id":"c2","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"call_9","type":"function","function":{"name":"Read","arguments":"{\"file_path\":\"README.md\"}"}}]}}]}
+
+data: {"id":"c2","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: [DONE]

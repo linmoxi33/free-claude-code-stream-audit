@@ -1,0 +1,28 @@
+{
+  "tool": "fcc-stream-audit",
+  "version": "1.0.0",
+  "source": "examples/in/clean.sse",
+  "chunks": 3,
+  "saw_done": true,
+  "tool_calls": [
+    {
+      "index": 0,
+      "id": "call_9",
+      "complete_name": "Read",
+      "emit_early_name": "Read",
+      "replace_name": "Read",
+      "name_fragments": [
+        "Read"
+      ],
+      "first_name_position": 3,
+      "arguments": "{\"file_path\":\"README.md\"}",
+      "arguments_valid": true
+    }
+  ],
+  "findings": [],
+  "summary": {
+    "tool_calls": 1,
+    "errors": 0,
+    "warnings": 0
+  }
+}

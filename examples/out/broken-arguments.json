@@ -1,0 +1,43 @@
+{
+  "tool": "fcc-stream-audit",
+  "version": "1.0.0",
+  "source": "examples/in/broken-arguments.jsonl",
+  "chunks": 3,
+  "saw_done": false,
+  "tool_calls": [
+    {
+      "index": 0,
+      "id": "call_a",
+      "complete_name": "Write",
+      "emit_early_name": "Write",
+      "replace_name": "Write",
+      "name_fragments": [
+        "Write"
+      ],
+      "first_name_position": 1,
+      "arguments": "{\"path\": ",
+      "arguments_valid": false
+    }
+  ],
+  "findings": [
+    {
+      "code": "ARGUMENTS_INVALID_JSON",
+      "level": "error",
+      "tool_index": 0,
+      "position": 2,
+      "message": "tool 0 arguments do not parse as JSON: Expecting value"
+    },
+    {
+      "code": "STREAM_NO_DONE",
+      "level": "warning",
+      "tool_index": null,
+      "position": null,
+      "message": "capture has no [DONE]/finish marker"
+    }
+  ],
+  "summary": {
+    "tool_calls": 1,
+    "errors": 1,
+    "warnings": 1
+  }
+}
